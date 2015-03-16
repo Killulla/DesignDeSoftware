@@ -1,0 +1,114 @@
+@@ -0,0 +1,114 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Mar 15 17:16:41 2015
+
+@author: Pipo
+"""
+
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Mar 14 21:45:22 2015
+
+@author: Pipo
+"""
+import random
+from colorama import Fore
+print(Fore.CYAN + "\n Bem vindo ao Pedra/Papel/Tesoura/Lagarto/Spock....\nVocê irá jogar contra mim, mas saiba que isso não será nada facil porque eu posso prever seus movimentos!!! \nPara acabar o jogo, um de nos terá que vencer 3 vezes seguidas... \nBoa sorte!")
+itens=["pedra","papel","tesoura","lagarto","spock"]
+player_pontos=0
+computer_pontos=0
+while player_pontos <3 and computer_pontos<3 :
+    print(Fore.MAGENTA + "Escolha a sua arma: Pedra,Papel,Tesoura,Lagarto ou Spock? \n(para deixar o jogo digite sair) " + Fore.RESET)
+    escolha=input()
+    computer_escolha=random.choice(itens)
+    if player_pontos>0 and computer_pontos!= 0:
+        player_pontos=0
+        computer_pontos=0
+    if escolha == "sair" or escolha=="Sair" or escolha=="SAIR":
+        print(Fore.BLUE + "Você saiu do jogo... ")
+        print(Fore.RESET)
+        break
+    if escolha==computer_escolha or escolha=="Pedra" and computer_escolha=="pedra" or escolha=="PEDRA" and computer_escolha=="pedra" or escolha=="Papel" and computer_escolha=="papel" or escolha=="PAPEL" and computer_escolha=="papel" or escolha=="Tesoura" and computer_escolha=="tesoura" or escolha=="TESOURA" and computer_escolha=="tesoura" or escolha=="Lagarto" and computer_escolha=="lagarto" or escolha=="LAGARTO" and computer_escolha=="lagarto" or escolha=="Spock" and computer_escolha=="spock" or escolha=="...(line truncated)...
+        print(Fore.BLUE + "A minha escolha foi: " + computer_escolha)
+        print(Fore.GREEN + "Isso foi um empate...Voltamos à estaca zero")
+        print(Fore.RESET)
+        player_pontos=0 
+        computer_pontos=0
+    if escolha !="pedra" and escolha !="papel" and escolha!="tesoura" and escolha!="lagarto" and escolha!="spock" and  escolha !="Pedra" and escolha !="Papel" and escolha!="Tesoura" and escolha!="Lagarto" and escolha!="Spock" and  escolha !="PEDRA" and escolha !="PAPEL" and escolha!="TESOURA" and escolha!="LAGARTO" and escolha!="SPOCK" :
+        print(Fore.RED + "Por favor faça uma escolha válida")
+        print(Fore.RESET)
+    elif escolha=="pedra" and computer_escolha=="lagarto" or escolha=="pedra" and computer_escolha=="tesoura" or escolha=="Pedra" and computer_escolha=="lagarto" or escolha=="Pedra" and computer_escolha=="tesoura" or escolha=="PEDRA" and computer_escolha=="lagarto" or escolha=="PEDRA" and computer_escolha=="tesoura" :
+        print(Fore.BLUE + "A minha escolha foi: " + computer_escolha)
+        print(Fore.RESET)
+        print("Você ganhou desta vez")
+        player_pontos=player_pontos+1
+        print(Fore.GREEN + "Você esta com %d ponto(s) e eu estou com %d ponto(s)" %(player_pontos,computer_pontos))
+        print(Fore.RESET)
+    elif escolha=="pedra" and computer_escolha=="papel" or escolha=="pedra" and computer_escolha=="spock" or escolha=="Pedra" and computer_escolha=="papel" or escolha=="Pedra" and computer_escolha=="spock" or escolha=="PEDRA" and computer_escolha=="papel" or escolha=="PEDRA" and computer_escolha=="spock" :
+        print(Fore.BLUE + "A minha escolha foi: " + computer_escolha)
+        print(Fore.RESET)
+        print("Eu ganhei desta vez")
+        computer_pontos=computer_pontos+1
+        print(Fore.GREEN + "Você esta com %d ponto(s) e eu estou com %d ponto(s)" %(player_pontos,computer_pontos))
+        print(Fore.RESET)
+    elif escolha=="papel" and computer_escolha=="spock" or escolha=="papel" and computer_escolha=="pedra" or escolha=="Papel" and computer_escolha=="spock" or escolha=="Papel" and computer_escolha=="pedra" or escolha=="PAPEL" and computer_escolha=="spock" or escolha=="PAPEL" and computer_escolha=="pedra" :
+        print(Fore.BLUE + "A minha escolha foi: " + computer_escolha)
+        print(Fore.RESET)
+        print("Você ganhou desta vez")
+        player_pontos=player_pontos+1
+        print(Fore.GREEN + "Você esta com %d ponto(s) e eu estou com %d ponto(s)" %(player_pontos,computer_pontos))
+        print(Fore.RESET)
+    elif escolha=="papel" and computer_escolha=="lagarto" or escolha=="papel" and computer_escolha=="tesoura" or escolha=="Papel" and computer_escolha=="lagarto" or escolha=="Papel" and computer_escolha=="tesoura" or escolha=="PAPEL" and computer_escolha=="lagarto" or escolha=="PAPEL" and computer_escolha=="tesoura" :
+        print(Fore.BLUE + "A minha escolha foi: " + computer_escolha)
+        print(Fore.RESET)
+        print("Eu ganhei desta vez")
+        computer_pontos=computer_pontos+1
+        print(Fore.GREEN + "Você esta com %d ponto(s) e eu estou com %d ponto(s)" %(player_pontos,computer_pontos))
+        print(Fore.RESET)
+    elif escolha=="tesoura" and computer_escolha=="papel" or escolha=="tesoura" and computer_escolha=="lagarto" or  escolha=="Tesoura" and computer_escolha=="papel" or escolha=="Tesoura" and computer_escolha=="lagarto" or  escolha=="TESOURA" and computer_escolha=="papel" or escolha=="TESOURA" and computer_escolha=="lagarto" :
+        print(Fore.BLUE + "A minha escolha foi: " + computer_escolha)
+        print(Fore.RESET)
+        print("Você ganhou desta vez")
+        player_pontos=player_pontos+1
+        print(Fore.GREEN + "Você esta com %d ponto(s) e eu estou com %d ponto(s)" %(player_pontos,computer_pontos))
+        print(Fore.RESET)
+    elif escolha=="tesoura" and computer_escolha=="spock" or escolha=="tesoura" and computer_escolha=="pedra" or escolha=="Tesoura" and computer_escolha=="spock" or escolha=="Tesoura" and computer_escolha=="pedra" or escolha=="TESOURA" and computer_escolha=="spock" or escolha=="TESOURA" and computer_escolha=="pedra" :
+        print(Fore.BLUE + "A minha escolha foi: " + computer_escolha)
+        print(Fore.RESET)
+        print("Eu ganhei desta vez")
+        computer_pontos=computer_pontos+1
+        print(Fore.GREEN + "Você esta com %d ponto(s) e eu estou com %d ponto(s)" %(player_pontos,computer_pontos))
+        print(Fore.RESET)
+    elif escolha=="lagarto" and computer_escolha=="papel" or escolha=="lagarto" and computer_escolha=="spock" or escolha=="Lagarto" and computer_escolha=="papel" or escolha=="Lagarto" and computer_escolha=="spock" or escolha=="LAGARTO" and computer_escolha=="papel" or escolha=="LAGARTO" and computer_escolha=="spock" :
+        print(Fore.BLUE + "A minha escolha foi: " + computer_escolha)
+        print(Fore.RESET)
+        print("Você ganhou desta vez")
+        player_pontos=player_pontos+1
+        print(Fore.GREEN + "Você esta com %d ponto(s) e eu estou com %d ponto(s)" %(player_pontos,computer_pontos))
+        print(Fore.RESET)
+    elif escolha=="lagarto" and computer_escolha=="tesoura" or escolha=="lagarto" and computer_escolha=="pedra" or escolha=="Lagarto" and computer_escolha=="tesoura" or escolha=="Lagarto" and computer_escolha=="pedra" or escolha=="LAGARTO" and computer_escolha=="tesoura" or escolha=="LAGARTO" and computer_escolha=="pedra" :
+        print(Fore.BLUE + "A minha escolha foi: " + computer_escolha)
+        print(Fore.RESET)
+        print("Eu ganhei desta vez")
+        computer_pontos=computer_pontos+1
+        print(Fore.GREEN + "Você esta com %d ponto(s) e eu estou com %d ponto(s)" %(player_pontos,computer_pontos))
+        print(Fore.RESET)
+    elif escolha=="spock" and computer_escolha=="pedra" or escolha=="spock" and computer_escolha=="tesoura" or escolha=="Spock" and computer_escolha=="pedra" or escolha=="Spock" and computer_escolha=="tesoura" or escolha=="SPOCK" and computer_escolha=="pedra" or escolha=="SPOCK" and computer_escolha=="tesoura" :
+        print(Fore.BLUE + "A minha escolha foi: " + computer_escolha)
+        print(Fore.RESET)
+        print("Você ganhou desta vez")
+        player_pontos=player_pontos+1
+        print(Fore.GREEN + "Você esta com %d ponto(s) e eu estou com %d ponto(s)" %(player_pontos,computer_pontos))
+        print(Fore.RESET)
+    elif escolha=="spock" and computer_escolha=="papel" or escolha=="spock" and computer_escolha=="lagarto" or  escolha=="Spock" and computer_escolha=="papel" or escolha=="Spock" and computer_escolha=="lagarto" or  escolha=="SPOCK" and computer_escolha=="papel" or escolha=="SPOCK" and computer_escolha=="lagarto" :
+        print(Fore.BLUE + "A minha escolha foi: " + computer_escolha)
+        print(Fore.RESET)
+        print("Eu ganhei desta vez")
+        computer_pontos=computer_pontos+1
+        print(Fore.GREEN + "Você esta com %d ponto(s) e eu estou com %d ponto(s)" %(player_pontos,computer_pontos))
+        print(Fore.RESET)
+if player_pontos >2:
+    print(Fore.CYAN + "O jogo acabou, parece que você venceu!")
+if computer_pontos >2:
+    print(Fore.RED + "O jogo acabou, e eu ganhei haha!")
